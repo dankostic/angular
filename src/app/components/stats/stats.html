@@ -1,0 +1,17 @@
+<section class="stats" id="stats">
+  <div class="container stats-grid">
+    @for (stat of stats(); track stat.label) {
+      <div class="stat-card">
+        <p class="stat-label">{{ stat.label }}</p>
+        <div class="stat-value-row">
+          <span class="stat-value">{{ stat.value }}</span>
+          @if (stat.change) {
+            <span class="stat-change" [class.down]="stat.trend === 'down'">
+              {{ stat.change }}
+            </span>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</section>

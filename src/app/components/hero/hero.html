@@ -1,0 +1,61 @@
+<section class="hero" id="home">
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">⚡ Live for the 2026 season</span>
+      <h1 class="hero-title">
+        Every match. <span class="text-gradient">Every stat.</span><br />
+        One place.
+      </h1>
+      <p class="hero-subtitle">
+        Sportaling brings live scores, team analytics, and fixtures together in a fast, clean
+        dashboard built for people who actually watch the game.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#matches">Explore matches</a>
+        <a class="btn btn-ghost" href="#stats">View live stats</a>
+      </div>
+
+      <ul class="hero-highlights">
+        @for (item of highlights; track item) {
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" width="16" height="16">
+              <path
+                d="M4 10.5 8 14.5 16 6.5"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            {{ item }}
+          </li>
+        }
+      </ul>
+    </div>
+
+    <div class="hero-card">
+      <div class="hero-card-header">
+        <span class="live-dot"></span>
+        Live now
+      </div>
+      <div class="hero-card-match">
+        <div class="hero-card-team">
+          <div class="team-badge">RM</div>
+          <span>Real Madrid</span>
+        </div>
+        <div class="hero-card-score">2&nbsp;–&nbsp;1</div>
+        <div class="hero-card-team">
+          <div class="team-badge">BAR</div>
+          <span>Barcelona</span>
+        </div>
+      </div>
+      <div class="hero-card-footer">
+        <span>78′</span>
+        <span>El Clásico · La Liga</span>
+      </div>
+    </div>
+  </div>
+</section>

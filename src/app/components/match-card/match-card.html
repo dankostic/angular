@@ -1,0 +1,38 @@
+<article class="match-card">
+  <div class="match-header">
+    <span class="league">{{ match().league }}</span>
+    @switch (match().status) {
+      @case ('live') {
+        <span class="status status-live"><span class="dot"></span>{{ match().minute }}′</span>
+      }
+      @case ('finished') {
+        <span class="status status-finished">Full time</span>
+      }
+      @default {
+        <span class="status status-upcoming">{{ match().kickoff }}</span>
+      }
+    }
+  </div>
+
+  <div class="match-body">
+    <div class="team">
+      <div class="badge">{{ initials(match().homeTeam) }}</div>
+      <span class="team-name">{{ match().homeTeam }}</span>
+    </div>
+
+    <div class="score">
+      @if (match().status === 'upcoming') {
+        <span class="vs">vs</span>
+      } @else {
+        <span>{{ match().homeScore }}</span>
+        <span class="score-sep">–</span>
+        <span>{{ match().awayScore }}</span>
+      }
+    </div>
+
+    <div class="team">
+      <div class="badge">{{ initials(match().awayTeam) }}</div>
+      <span class="team-name">{{ match().awayTeam }}</span>
+    </div>
+  </div>
+</article>

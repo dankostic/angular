@@ -1,0 +1,28 @@
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <a class="brand" href="#home">
+        <span class="brand-mark">S</span>
+        <span class="brand-name">Sportaling</span>
+      </a>
+
+      <div class="footer-columns">
+        @for (column of columns; track column.title) {
+          <div class="footer-column">
+            <h4>{{ column.title }}</h4>
+            <ul>
+              @for (link of column.links; track link) {
+                <li><a href="#">{{ link }}</a></li>
+              }
+            </ul>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© {{ year }} Sportaling. All rights reserved.</span>
+      <span>Built with Angular</span>
+    </div>
+  </div>
+</footer>

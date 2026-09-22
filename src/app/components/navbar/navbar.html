@@ -1,0 +1,31 @@
+<header class="navbar">
+  <div class="navbar-inner container">
+    <a class="brand" href="#home" (click)="closeMenu()">
+      <span class="brand-mark">S</span>
+      <span class="brand-name">Sportaling</span>
+    </a>
+
+    <nav class="nav-links" [class.open]="menuOpen()">
+      @for (link of links; track link) {
+        <a class="nav-link" [href]="'#' + link.toLowerCase()" (click)="closeMenu()">{{ link }}</a>
+      }
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="#" (click)="closeMenu()">Sign in</a>
+        <a class="btn btn-primary" href="#" (click)="closeMenu()">Get started</a>
+      </div>
+    </nav>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      [class.open]="menuOpen()"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Toggle navigation menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
