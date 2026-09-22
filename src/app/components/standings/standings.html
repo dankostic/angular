@@ -1,0 +1,53 @@
+<section class="standings" id="teams">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Standings</span>
+      <h2>{{ title() }}</h2>
+      <p>Current league table with form guide for the last five matches.</p>
+    </div>
+
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th class="col-pos">#</th>
+            <th class="col-team">Team</th>
+            <th>P</th>
+            <th>W</th>
+            <th>D</th>
+            <th>L</th>
+            <th>Pts</th>
+            <th class="col-form">Form</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (row of rows(); track row.team) {
+            <tr>
+              <td class="col-pos">{{ row.position }}</td>
+              <td class="col-team">
+                <div class="team-cell">
+                  <div class="badge">{{ initials(row.team) }}</div>
+                  <span>{{ row.team }}</span>
+                </div>
+              </td>
+              <td>{{ row.played }}</td>
+              <td>{{ row.won }}</td>
+              <td>{{ row.drawn }}</td>
+              <td>{{ row.lost }}</td>
+              <td class="points">{{ row.points }}</td>
+              <td class="col-form">
+                <div class="form-dots">
+                  @for (result of row.form; track $index) {
+                    <span class="form-dot" [class]="'form-' + result.toLowerCase()">{{
+                      result
+                    }}</span>
+                  }
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

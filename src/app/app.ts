@@ -4,10 +4,25 @@ import { Navbar } from './components/navbar/navbar';
 import { Hero } from './components/hero/hero';
 import { Stats } from './components/stats/stats';
 import { MatchCard, Match } from './components/match-card/match-card';
+import { Standings } from './components/standings/standings';
+import { Testimonials } from './components/testimonials/testimonials';
+import { Faq } from './components/faq/faq';
+import { Cta } from './components/cta/cta';
 import { Footer } from './components/footer/footer';
 
 @Component({
-  imports: [RouterOutlet, Navbar, Hero, Stats, MatchCard, Footer],
+  imports: [
+    RouterOutlet,
+    Navbar,
+    Hero,
+    Stats,
+    MatchCard,
+    Standings,
+    Testimonials,
+    Faq,
+    Cta,
+    Footer,
+  ],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
