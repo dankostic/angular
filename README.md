@@ -1,6 +1,19 @@
 # Sportaling
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.7.
+A sports scores and standings landing app, built with [Angular](https://angular.dev) using standalone components and signals. Originally generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.7.
+
+## Pages
+
+The app is routed (`src/app/app.routes.ts`) into the following pages, each under `src/app/pages/<name>/`:
+
+| Route      | Page        | Content                          |
+| ---------- | ----------- | --------------------------------- |
+| `/`        | `Home`      | Hero, testimonials, FAQ, CTA      |
+| `/matches` | `Matches`   | Today's fixtures                  |
+| `/teams`   | `Teams`     | League standings                  |
+| `/stats`   | `StatsPage` | Headline stats                    |
+
+Reusable, presentational pieces (`Navbar`, `Hero`, `Stats`, `MatchCard`, `Standings`, `Testimonials`, `Faq`, `Cta`, `Footer`) live in `src/app/components/` and are composed by the pages above. See `CLAUDE.md` for more on the architecture.
 
 ## Development server
 
@@ -57,4 +70,3 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-# angular
