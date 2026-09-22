@@ -1,0 +1,15 @@
+<section class="section" id="matches">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Fixtures</span>
+      <h2>Today's matches</h2>
+      <p>A live look at what's kicking off across the top leagues right now.</p>
+    </div>
+
+    <div class="match-grid">
+      @for (match of matches; track match.homeTeam + match.awayTeam) {
+        <app-match-card [match]="match" />
+      }
+    </div>
+  </div>
+</section>

@@ -55,7 +55,8 @@
   transition: color 0.15s ease;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
   color: var(--text-primary);
 }
 

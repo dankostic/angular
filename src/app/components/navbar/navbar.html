@@ -1,13 +1,20 @@
 <header class="navbar">
   <div class="navbar-inner container">
-    <a class="brand" href="#home" (click)="closeMenu()">
+    <a class="brand" routerLink="/" (click)="closeMenu()">
       <span class="brand-mark">S</span>
       <span class="brand-name">Sportaling</span>
     </a>
 
     <nav class="nav-links" [class.open]="menuOpen()">
-      @for (link of links; track link) {
-        <a class="nav-link" [href]="'#' + link.toLowerCase()" (click)="closeMenu()">{{ link }}</a>
+      @for (link of links; track link.path) {
+        <a
+          class="nav-link"
+          [routerLink]="link.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+          (click)="closeMenu()"
+          >{{ link.label }}</a
+        >
       }
       <div class="nav-actions">
         <a class="btn btn-ghost" href="#" (click)="closeMenu()">Sign in</a>
